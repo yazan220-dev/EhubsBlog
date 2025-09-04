@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ehubs Blog</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Ehubs - Elegant, Secure, and Feature-Rich Blogging Platform">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="mascot-container">
+      <canvas id="mascot" width="100" height="100"></canvas>
+    </div>
+    <div class="header-title">
+      <h1>Ehubs</h1>
+      <p>Discover. Read. Connect.</p>
+    </div>
+    <nav class="header-nav">
+      <a href="#membership">Membership</a>
+      <a href="#ebooks">Ebooks</a>
+      <a href="#affiliate">Affiliates</a>
+      <a href="#tools">Tools</a>
+      <a href="#policy">Policy</a>
+      <a href="#terms">Terms</a>
+      <a href="#settings">Settings</a>
+      <a href="#payments">Payments</a>
+    </nav>
+  </header>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-title">Categories</div>
+    <ul class="category-list">
+      <li onclick="navigateCategory('tech')">Tech</li>
+      <li onclick="navigateCategory('lifestyle')">Lifestyle</li>
+      <li onclick="navigateCategory('travel')">Travel</li>
+      <li onclick="navigateCategory('food')">Food</li>
+      <li onclick="navigateCategory('health')">Health</li>
+      <li onclick="navigateCategory('business')">Business</li>
+      <li onclick="navigateCategory('science')">Science</li>
+      <li onclick="navigateCategory('art')">Art</li>
+      <li onclick="navigateCategory('tools')">Tools</li>
+    </ul>
+    <div class="sidebar-tools">
+      <div class="timer-section">
+        <label for="reading-timer">Set Reading Timer:</label>
+        <input type="number" id="reading-timer" min="1" max="120" placeholder="Minutes">
+        <button onclick="startReadingTimer()">Start</button>
+        <div id="timer-display"></div>
+      </div>
+    </div>
+  </aside>
+  <main id="main-content">
+    <section id="category-listing" class="active">
+      <h2>Welcome to Ehubs Blog!</h2>
+      <p>Select a category to explore articles...</p>
+    </section>
+    <section id="membership" class="tab-content">
+      <h2>Membership</h2>
+      <p>Become a member to enjoy exclusive content, account management, and more.</p>
+      <button onclick="showSignup()">Sign Up</button>
+      <button onclick="showLogin()">Login</button>
+      <div id="account-manage"></div>
+    </section>
+    <section id="ebooks" class="tab-content">
+      <h2>Ebooks Library</h2>
+      <p>Browse and purchase ebooks from our curated collection.</p>
+      <div id="ebooks-list"></div>
+    </section>
+    <section id="affiliate" class="tab-content">
+      <h2>Affiliate Links & Products</h2>
+      <div id="affiliate-list"></div>
+    </section>
+    <section id="tools" class="tab-content">
+      <h2>Site Tools</h2>
+      <ul>
+        <li><a href="#ai-chat">AI Chat</a></li>
+        <li><a href="#pdf-tools">PDF Tools</a></li>
+        <li><a href="#text-tools">Text Tools</a></li>
+        <li><a href="#calories-tool">Calories Tool</a></li>
+        <li><a href="#face-shape-tool">Face Shape Tool</a></li>
+        <li><a href="#age-tool">Age Tool</a></li>
+      </ul>
+    </section>
+    <section id="payments" class="tab-content">
+      <h2>Payments</h2>
+      <p>Support us or buy products securely.</p>
+      <form id="paypal-form" action="https://www.paypal.com/donate" method="post" target="_blank">
+        <input type="hidden" name="business" value="your-paypal@email.com">
+        <input type="hidden" name="currency_code" value="USD">
+        <button type="submit">Donate with PayPal</button>
+      </form>
+      <div class="other-payments">
+        <button disabled title="Coming soon">Google Pay</button>
+        <button disabled title="Coming soon">Apple Pay</button>
+        <button disabled title="Coming soon">Stripe</button>
+        <button disabled title="Coming soon">Payoneer</button>
+      </div>
+    </section>
+    <section id="policy" class="tab-content">
+      <h2>Privacy Policy</h2>
+      <p>Your privacy is important. We do not sell your data. Read our full policy <a href="#full-policy">here</a>.</p>
+      <pre>
+        We collect minimal personal data for account management and site analytics.
+        No data is shared with third parties except for payment processing.
+        Cookies are used for preferences and authentication only.
+      </pre>
+    </section>
+    <section id="terms" class="tab-content">
+      <h2>Terms & Conditions</h2>
+      <pre>
+        Use of Ehubs Blog is subject to responsible behavior.
+        No abusive language, spamming, or illegal activity is allowed.
+        Payments and purchases are subject to external provider terms.
+      </pre>
+    </section>
+    <section id="settings" class="tab-content">
+      <h2>Account Settings</h2>
+      <div>
+        <label>Theme:
+          <select id="theme-switcher" onchange="switchTheme()">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </label>
+      </div>
+      <button onclick="logoutUser()">Logout</button>
+    </section>
+    <!-- Adsense and other ad scripts base -->
+    <section id="ads-base" style="display:none;">
+      <!-- Place your ad scripts here -->
+    </section>
+  </main>
+  <footer>
+    <div class="footer-info">
+      <span>Ehubs &copy; 2025</span>
+      <span><a href="#policy">Privacy Policy</a></span>
+      <span><a href="#terms">Terms & Conditions</a></span>
+      <span><a href="#membership">Membership</a></span>
+      <span><a href="#affiliate">Affiliates</a></span>
+      <span><a href="#ebooks">Ebooks</a></span>
+      <span><a href="#payments">Payments</a></span>
+      <span><a href="#tools">Tools</a></span>
+      <span id="theme-toggle" onclick="toggleTheme()">🌗</span>
+    </div>
+    <div class="footer-clock">
+      <span id="world-clock"></span>
+    </div>
+    <div class="footer-unique">
+      <div class="footer-mascot-animate"></div>
+    </div>
+  </footer>
+</body>
+</html>
